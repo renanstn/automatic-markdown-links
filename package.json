@@ -1,0 +1,26 @@
+{
+  "name": "automatic-markdown-links",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanstn/automatic-markdown-links.git"
+  },
+  "author": "Renan Santana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renanstn/automatic-markdown-links/issues"
+  },
+  "homepage": "https://github.com/renanstn/automatic-markdown-links#readme",
+  "devDependencies": {
+    "electron": "^22.0.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4"
+  }
+}
