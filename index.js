@@ -38,3 +38,26 @@ function create_links(event) {
 
 // Events listeners
 document.getElementById("create").addEventListener("click", create_links)
+
+// Tabs behaviour
+function openTab(event, tab_name) {
+  event.preventDefault()
+
+  // Hide all contents
+  const tabcontent = document.getElementsByClassName("tab-content")
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none"
+  }
+
+  // Remove the "is-active" class from all tabs
+  const tablinks = document.getElementsByClassName("tab-link")
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("is-active")
+  }
+
+  // Show selected tab content
+  document.getElementById(tab_name).style.display = "block"
+
+  // Add "is-active" class for style purposes
+  event.currentTarget.classList.add("is-active")
+}

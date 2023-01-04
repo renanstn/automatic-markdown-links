@@ -9,26 +9,43 @@
 </head>
 
 <body>
-  <div class="hero is-fullheight">
+  <div class="hero">
     <div class="hero-body">
       <div class="container">
-        <div class="columns is-centered">
-          <div class="column">
-            <form>
-              <div class="field">
-                <label class="label">Texto:</label>
-                <div class="control">
-                  <textarea class="textarea" id="content" rows="14"></textarea>
-                </div>
-              </div>
-              <div class="field is-grouped is-grouped-right">
-                <div class="control">
-                  <button class="button is-primary" id="create">Criar links</button>
-                </div>
-              </div>
-            </form>
-          </div>
+
+        <div class="tabs is-toggle is-fullwidth">
+          <ul>
+            <li class="is-active tab-link" onclick="openTab(event, 'conversor')">
+              <a>Create links</a>
+            </li>
+            <li class="tab-link" onclick="openTab(event, 'configuration')">
+              <a>Configuration</a>
+            </li>
+          </ul>
         </div>
+
+        <div id="conversor" class="tab-content">
+          <form>
+            <div class="field">
+              <label class="label">Texto:</label>
+              <div class="control">
+                <textarea class="textarea" id="content" rows="14"></textarea>
+              </div>
+            </div>
+            <div class="field is-grouped is-grouped-right">
+              <div class="control">
+                <button class="button is-link" id="create">
+                  Criar links
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div id="configuration" class="tab-content" style="display:none">
+          config
+        </div>
+
       </div>
     </div>
   </div>
