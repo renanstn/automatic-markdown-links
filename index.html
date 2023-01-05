@@ -24,14 +24,17 @@
           </ul>
         </div>
 
+        <!-- Main tab -->
         <div id="conversor" class="tab-content">
           <form>
+
             <div class="field">
               <label class="label">Texto:</label>
               <div class="control">
                 <textarea class="textarea" id="content" rows="14"></textarea>
               </div>
             </div>
+
             <div class="field is-grouped is-grouped-right">
               <div class="control">
                 <button class="button is-link" id="create">
@@ -39,11 +42,36 @@
                 </button>
               </div>
             </div>
+
           </form>
         </div>
 
+        <!-- Configuration tab -->
         <div id="configuration" class="tab-content" style="display:none">
-          config
+          <form>
+
+            <div class="field">
+              <label class="label">GitLab URL</label>
+              <div class="control">
+                <input type="text" class="input" id="gitlab-url" value="https://git.mop.equinix.com.br/api/v4/">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">GitLab token</label>
+              <div class="control">
+                <input type="text" class="input" id="gitlab-token">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Project ID</label>
+              <div class="control">
+                <input type="text" class="input" id="project-id" value="252">
+              </div>
+            </div>
+
+          </form>
         </div>
 
       </div>

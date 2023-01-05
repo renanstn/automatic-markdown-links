@@ -1,8 +1,11 @@
 function create_links(event) {
   event.preventDefault()
 
-  const project_id = "252"
-  const url = "https://git.mop.equinix.com.br/api/v4/"
+  // Configuration values
+  const project_id = document.getElementById("project-id").value
+  const url = document.getElementById("gitlab-url").value
+  const gitlab_token = document.getElementById("gitlab-token").value
+
   let content = document.getElementById("content").value
   const regex = /[A-Z]{3,4}-\d{3}/gm;
   let matches
@@ -21,14 +24,17 @@ function create_links(event) {
 
       fetch(mounted_url, {
         method: "GET",
-        headers: {"PRIVATE-TOKEN": "token"},  // TODO: change here
+        headers: {"PRIVATE-TOKEN": gitlab_token},
       })
       .then((response) => response.json())
       .then((data) => {
         if (data.length > 0) {
           // Change issue code by markdown link pattern
           const issue_url = data[0]["web_url"]
-          content = content.replace(issue_code, `[${issue_code}](${issue_url})`)
+          content = content.replace(
+            issue_code,
+            `[${issue_code}](${issue_url})`
+          )
           document.getElementById("content").value = content
         }
       })
@@ -47,7 +53,7 @@ function openTab(event, tab_name) {
   const tabcontent = document.getElementsByClassName("tab-content")
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none"
-  }
+  }
 
   // Remove the "is-active" class from all tabs
   const tablinks = document.getElementsByClassName("tab-link")
