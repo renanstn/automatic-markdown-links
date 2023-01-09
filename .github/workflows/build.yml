@@ -1,9 +1,12 @@
 name: Build/release
 
-on: push
+on:
+  push:
+    branches:
+      - "master"
 
 jobs:
-  release:
+  build:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -23,3 +26,13 @@ jobs:
         run: |
           npm install
           npm run make
+
+      - name: Publish release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+            *.exe
