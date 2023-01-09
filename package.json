@@ -1,11 +1,13 @@
 {
   "name": "automatic-markdown-links",
   "version": "1.0.0",
-  "description": "",
+  "description": "Desktop app to automatically create gitlab links in markdown patterns.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
@@ -18,9 +20,15 @@
   },
   "homepage": "https://github.com/renanstn/automatic-markdown-links#readme",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
     "electron": "^22.0.0"
   },
   "dependencies": {
-    "bulma": "^0.9.4"
+    "bulma": "^0.9.4",
+    "electron-squirrel-startup": "^1.0.0"
   }
 }
