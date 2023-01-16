@@ -27,5 +27,11 @@ jobs:
           npm install
           npm run make
 
-      - name: Publish release
-        uses: softprops/action-gh-release@v1
+      - name: Create release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          title: "Development Build"
+          files: D:\a\automatic-markdown-links\automatic-markdown-links\out\make
