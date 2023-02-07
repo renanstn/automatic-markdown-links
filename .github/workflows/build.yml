@@ -31,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app
-          path: D:\a\automatic-markdown-links\automatic-markdown-links\out\make\
+          path: D:\a\automatic-markdown-links\automatic-markdown-links\out\
