@@ -27,11 +27,8 @@ jobs:
           npm install
           npm run make
 
-      - name: Create release
-        uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: false
-          title: "Development Build"
-          files: D:\a\automatic-markdown-links\automatic-markdown-links\out\make
+          name: app
+          path: D:\a\automatic-markdown-links\automatic-markdown-links\out\make\
