@@ -30,7 +30,8 @@ function create_links(event) {
       .then((data) => {
         if (data.length > 0) {
           // Change issue code by markdown link pattern
-          const issue_url = data[0]["web_url"]
+          const issue = data.find(element => element.title.includes(`[${issue_code}]`))
+          const issue_url = issue["web_url"]
           content = content.replace(
             issue_code,
             `[${issue_code}](${issue_url})`
