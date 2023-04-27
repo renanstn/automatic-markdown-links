@@ -32,7 +32,7 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           automatic_release_tag: "v1.2"
-          files: D:\a\automatic-markdown-links\automatic-markdown-links\out\automatic-markdown-links-win32-x64\
+          files: D:\a\automatic-markdown-links\automatic-markdown-links\out\automatic-markdown-links-win32-x64\**
 
       # - name: Upload artifact
       #   uses: actions/upload-artifact@v3
