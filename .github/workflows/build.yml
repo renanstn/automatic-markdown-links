@@ -1,37 +1,37 @@
-# name: Build/release
+name: Build/release
 
-# on:
-#   push:
-#     branches:
-#       - "main"
-#     paths:
-#       - '**.js'
-#       - '**.html'
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - '**.js'
+      - '**.html'
 
-# jobs:
-#   build:
-#     runs-on: ${{ matrix.os }}
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
 
-#     strategy:
-#       matrix:
-#         os: [windows-latest]
+    strategy:
+      matrix:
+        os: [windows-latest]
 
-#     steps:
-#       - name: Check out Git repository
-#         uses: actions/checkout@v3
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
 
-#       - name: Install Node.js, NPM and Yarn
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 18
+      - name: Install Node.js, NPM and Yarn
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-#       - name: Build Electron app
-#         run: |
-#           npm install
-#           npm run make
+      - name: Build Electron app
+        run: |
+          npm install
+          npm run make
 
-#       - name: Upload artifact
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: app
-#           path: D:\a\automatic-markdown-links\automatic-markdown-links\out\automatic-markdown-links-win32-x64\
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: app
+          path: D:\a\automatic-markdown-links\automatic-markdown-links\out\automatic-markdown-links-win32-x64\
