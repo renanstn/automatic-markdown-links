@@ -7,7 +7,7 @@ function create_links(event) {
   const gitlab_token = document.getElementById("gitlab-token").value
 
   let content = document.getElementById("content").value
-  const regex = /[A-Z]{3,4}-\d{3}/gm;
+  const regex = /[A-Z]{3,4}-\d{3,4}/gm;
   let matches
 
   while ((matches = regex.exec(content)) !== null) {
